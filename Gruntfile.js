@@ -21,12 +21,17 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      build: {
+        files: [{
+          expand: true,
+          src: '**/*.js',
+          dest: 'public/dist'
+        }]
+      }
     },
 
     eslint: {
-      target: [
-        // Add list of files to lint here
-      ]
+      all: ['**/*.js']
     },
 
     cssmin: {
