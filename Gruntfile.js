@@ -23,11 +23,14 @@ module.exports = function(grunt) {
     uglify: {
       build: {
         options: {
-          ASCIIOnly : true
+          ASCIIOnly: true
         },
         files: [{
           expand: true,
-          src: '**/*.js',
+          src: [
+            './app/*.js', './db/*.js', './lib/*.js', './public/*.js',
+            './test/*.js', './views/*.js', './*.js'
+          ],
           dest: 'public/dist'
         }]
       }
@@ -79,7 +82,7 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
-  grunt.registerTask('default', ['uglify']);
+  // grunt.registerTask('default', ['uglify']);
   grunt.registerTask('test', [
     'mochaTest'
   ]);
